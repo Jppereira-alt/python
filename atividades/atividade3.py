@@ -1,5 +1,26 @@
-temp = int(input("digite a temperatura atual: "))
-if temp > 25:
-    print ("a temperatura esta acima do limite permitido")
-if temp < 26:
-    print("a temperatura esta no limite")
+print("""
+░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
+╚█████╗░███████║██████╦╝██║░░██║██████╔╝  █████╗░░░╚███╔╝░██████╔╝██████╔╝█████╗░░╚█████╗░╚█████╗░
+░╚═══██╗██╔══██║██╔══██╗██║░░██║██╔══██╗  ██╔══╝░░░██╔██╗░██╔═══╝░██╔══██╗██╔══╝░░░╚═══██╗░╚═══██╗
+██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
+╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░  
+""")
+
+print('1. Cadastrar restaurante')
+print('2. Listar restaurante')
+print('3. Ativar restaurante')
+print('4. Sair\n')
+
+opcao_escolhida = input('Escolha uma opção: ')
+
+if opcao_escolhida == '1':
+    print('vamos iniciar o cadastro')
+    nome = input('digite seu nome de usuário: '.upper)
+    senha = input('digite sua senha: ')
+    if nome == 'joao' and senha == 1234:
+        print("acesso permitido")
+    else:
+        print('acesso negado')
+
+

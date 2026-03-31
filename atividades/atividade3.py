@@ -11,7 +11,7 @@ def exibir_nome_do_programa():
 ██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░  
 """)
-def tabela():
+def tabela(): 
     print('[1] Cadastrar restaurante')
     print('[2] Listar restaurante')
     print('[3] Ativar restaurante')
@@ -30,7 +30,7 @@ def opcao_invalida(): #funçao que entrega a opçao invalida
 def cadastrar_restaurante(): #cadastro do restaurante
     os.system('cls')
     print('vamos iniciar o cadastro')
-    nome_restaurante = input('digite seu nome do Restaurante: ').upper()
+    nome_restaurante = input('digite seu nome do Restaurante: ').lower()
 
     restaurantes.append(nome_restaurante)
     print (f'RESTAURANTE {nome_restaurante} FOI CADASTRADO COM SUCESSO!')
@@ -39,7 +39,7 @@ def cadastrar_restaurante(): #cadastro do restaurante
     main()
 
 def listar_restaurantes():
-    print (f"""esses são todos os restaurantes listados""")
+    print (f"""esses são todos os restaurantes listados\n""")
     for item in restaurantes:
         print('-' + item)
     
@@ -47,13 +47,16 @@ def listar_restaurantes():
     main()
 
 def remover_restaurante():
-    nome = input("Qual remover? ")
+    nome = input("Qual remover? ").lower()
 
     if nome in restaurantes:
         restaurantes.remove(nome)
         print("Removido!")
     else:
         print("Não encontrado!")
+
+    input('Digite uma tecla para voltar ao Menu: ')
+    main()
 
 def escolher_opção():
     try: # usado como "tente(try) isso, se nao der certo use opçao invalida" (except), entendeu?
@@ -78,14 +81,14 @@ def escolher_opção():
     except:
         opcao_invalida() # caso em que ele escreve uma letra ele entrega opçao invalida
         
-
 def main(): #funçao principal que é entregue tudo
     os.system('cls')
     exibir_nome_do_programa()
     tabela()
     escolher_opção()
 
-if __name__ == '__main__': #nao entendi muito bem essa parte
+if __name__ == '__main__':
+    main() #nao entendi muito bem essa parte
     main()
 
     #usar bastante import OS

@@ -12,10 +12,10 @@ def exibir_nome_do_programa():
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░  
 """)
 def tabela(): 
-    print('[1] Cadastrar restaurante')
-    print('[2] Listar restaurante')
-    print('[3] Ativar restaurante')
-    print('[4] Remover restaurante')
+    print('[1] Cadastrar restaurante ')
+    print('[2] Listar restaurante ')
+    print('[3] Ativar restaurante ')
+    print('[4] Remover restaurante ')
     print('[5] Sair\n')
 
 def finalizar_app(): #caso para limpar o terminal

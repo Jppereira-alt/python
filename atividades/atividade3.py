@@ -89,6 +89,5 @@ def main(): #funçao principal que é entregue tudo
 
 if __name__ == '__main__':
     main() #nao entendi muito bem essa parte
-    main()
 
     #usar bastante import OS

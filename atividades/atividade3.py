@@ -1,6 +1,8 @@
 import os
 
 restaurantes = []
+ativados = []
+desativados = []
 
 def exibir_nome_do_programa():
     print("""
@@ -15,8 +17,9 @@ def tabela():
     print('[1] Cadastrar restaurante ')
     print('[2] Listar restaurante ')
     print('[3] Ativar restaurante ')
-    print('[4] Remover restaurante ')
-    print('[5] Sair\n')
+    print('[4] Desativar restaurantes')
+    print('[5] Remover restaurante ')
+    print('[6] Sair\n')
 
 def finalizar_app(): #caso para limpar o terminal
     os.system('cls')
@@ -61,11 +64,25 @@ def remover_restaurante():
 def ativar_restaurante():
     os.system("cls")
     print('Esses são os restaurantes para ativar: \n')
-    for item in restaurantes:
+    for item in ativados:
         print('-' + item)
     nome = input('\nQual Restaurante voce deseja ativar?\n')
     
-    if nome in restaurantes:
+    if nome in ativados:
+        print('restaurante ativado')
+    else:
+        print('não encontrado')
+    input('Digite uma tecla para voltar ao Menu: ')
+    main()
+
+def desativar_restaurantes():
+    os.system("cls")
+    print('Esses são os restaurantes ativados: \n')
+    for item in ativados:
+        print('-' + item)
+    nome = input('\nQual Restaurante voce deseja ativar?\n')
+    
+    if nome in ativados:
         print('restaurante ativado')
     else:
         print('não encontrado')
@@ -86,18 +103,22 @@ def escolher_opção():
             ativar_restaurante()
             
         elif opcao_escolhida == 4:
-            remover_restaurante()
+            desativar_restaurantes()
 
         elif opcao_escolhida == 5:
-            finalizar_app() #caso em que o app finaliza
-        else:   
-            opcao_invalida() #caso em que nao for um dos 4 numeros ele entrega opçao invalida
+            remover_restaurante()
+             #caso em que o app finaliza
+        elif  opcao_escolhida == 6:
+            finalizar_app() 
+        else:
+            opcao_invalida #caso em que nao for um dos 4 numeros ele entrega opçao invalida
     except:
         opcao_invalida() # caso em que ele escreve uma letra ele entrega opçao invalida
         
 def main(): #funçao principal que é entregue tudo
     os.system('cls')
     exibir_nome_do_programa()
+    print ('Cadastre o restaurantes antes de ativa-lo ou desativa-lo \n')
     tabela()
     escolher_opção()
 

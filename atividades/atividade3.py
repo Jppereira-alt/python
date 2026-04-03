@@ -58,26 +58,40 @@ def remover_restaurante():
     input('Digite uma tecla para voltar ao Menu: ')
     main()
 
+def ativar_restaurante():
+    os.system("cls")
+    print('Esses são os restaurantes para ativar: \n')
+    for item in restaurantes:
+        print('-' + item)
+    nome = input('\nQual Restaurante voce deseja ativar?\n')
+    
+    if nome in restaurantes:
+        print('restaurante ativado')
+    else:
+        print('não encontrado')
+    input('Digite uma tecla para voltar ao Menu: ')
+    main()
+
 def escolher_opção():
     try: # usado como "tente(try) isso, se nao der certo use opçao invalida" (except), entendeu?
         opcao_escolhida = int(input('Escolha uma opção: '))
 
         if opcao_escolhida == 1: 
-                cadastrar_restaurante()
+            cadastrar_restaurante()
 
         elif opcao_escolhida == 2:
-                listar_restaurantes()
+            listar_restaurantes()
 
         elif opcao_escolhida == 3:  
-                print('ativar restaurantes')
+            ativar_restaurante()
             
         elif opcao_escolhida == 4:
-                remover_restaurante()
+            remover_restaurante()
 
         elif opcao_escolhida == 5:
-                finalizar_app() #caso em que o app finaliza
+            finalizar_app() #caso em que o app finaliza
         else:   
-                opcao_invalida() #caso em que nao for um dos 4 numeros ele entrega opçao invalida
+            opcao_invalida() #caso em que nao for um dos 4 numeros ele entrega opçao invalida
     except:
         opcao_invalida() # caso em que ele escreve uma letra ele entrega opçao invalida
         

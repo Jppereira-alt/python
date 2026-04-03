@@ -1,8 +1,8 @@
 import os
 
 restaurantes = []
-ativados = []
-desativados = []
+ativar = []
+desativar = []
 
 def exibir_nome_do_programa():
     print("""
@@ -64,28 +64,49 @@ def remover_restaurante():
 def ativar_restaurante():
     os.system("cls")
     print('Esses são os restaurantes para ativar: \n')
-    for item in ativados:
-        print('-' + item)
-    nome = input('\nQual Restaurante voce deseja ativar?\n')
-    
-    if nome in ativados:
-        print('restaurante ativado')
-    else:
-        print('não encontrado')
+
+    for item in restaurantes:
+        print ('- ' + item)
+    nome = input('\n Qual restaurante você deseja ativar?\n').strip().lower()
+
+    encontrado = False
+
+    for item in restaurantes:
+        if nome == item.lower():
+            encontrado == True
+
+            if item in ativar:
+                print ('este restaurante ja esta ativado')
+            else:
+                ativar.append(item)
+                print (f'Restaurantes {item} ativados com sucesso!')
+            break
+        if not encontrado:
+            print ('restaurante não encontrado')
     input('Digite uma tecla para voltar ao Menu: ')
     main()
 
 def desativar_restaurantes():
     os.system("cls")
-    print('Esses são os restaurantes ativados: \n')
-    for item in ativados:
-        print('-' + item)
-    nome = input('\nQual Restaurante voce deseja ativar?\n')
-    
-    if nome in ativados:
-        print('restaurante ativado')
-    else:
-        print('não encontrado')
+    print('Esses são os restaurantes para desativar: \n')
+
+    for item in ativar:
+        print ('- ' + item)
+    nome = input('\n Qual restaurante você deseja ativar?\n').strip().lower()
+
+    encontrado = False
+
+    for item in ativar:
+        if nome == item.lower():
+            encontrado == True
+
+            ativar.remove(item)
+            desativar.append(item)
+            print(f'restaurante {item} desativado com sucesso!')
+            break
+        if not encontrado:
+            print('restaurante não está ativo ou não foi encontrado!')
+
     input('Digite uma tecla para voltar ao Menu: ')
     main()
 

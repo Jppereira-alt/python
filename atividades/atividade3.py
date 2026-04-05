@@ -92,7 +92,7 @@ def desativar_restaurantes():
 
     for item in ativar:
         print ('- ' + item)
-    nome = input('\n Qual restaurante você deseja ativar?\n').strip().lower()
+    nome = input('\n Qual restaurante você deseja desativar?\n').strip().lower()
 
     encontrado = False
 
@@ -105,7 +105,7 @@ def desativar_restaurantes():
             print(f'restaurante {item} desativado com sucesso!')
             break
         if not encontrado:
-            print('restaurante não está ativo ou não foi encontrado!')
+                  print('restaurante não está ativo ou não foi encontrado!')
 
     input('Digite uma tecla para voltar ao Menu: ')
     main()

@@ -107,7 +107,7 @@ def desativar_restaurantes():
         if not encontrado:
                   print('restaurante não está ativo ou não foi encontrado!')
 
-    input('Digite uma tecla para voltar ao Menu: ')
+    input('Digite uma tecla para voltar ao Menu: ') 
     main()
 
 def escolher_opção():
